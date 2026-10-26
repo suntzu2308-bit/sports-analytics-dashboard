@@ -1,0 +1,9 @@
+game_id,date,home_team,away_team,home_score,away_score
+G001,2026-01-01,Falcons,Wolves,91,85
+G002,2026-01-02,Bears,Sharks,78,82
+G003,2026-01-03,Wolves,Bears,88,84
+G004,2026-01-04,Sharks,Falcons,90,93
+G005,2026-01-05,Falcons,Bears,95,87
+G006,2026-01-06,Wolves,Sharks,79,81
+G007,2026-01-07,Bears,Falcons,86,92
+G008,2026-01-08,Sharks,Wolves,88,83
