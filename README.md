@@ -1,5 +1,7 @@
 # Sports Analytics Dashboard
 
+**[Launch the live dashboard](https://sports-analytics-dash.streamlit.app)** · [View source code](https://github.com/suntzu2308-bit/sports-analytics-dashboard)
+
 An interactive **Streamlit + Python** portfolio dashboard using **fabricated match results**. Explore team performance through KPI cards, team and date filters, win-percentage and scoring charts, a date-filtered game log, and CSV export. Includes a reproducible standard-library KPI pipeline, SQLite query example, and automated tests.
 
 ## Run the interactive dashboard locally
@@ -40,7 +42,7 @@ The pipeline writes `output/team_kpis.csv` and `output/kpi_chart.svg`. GitHub Ac
 
 ## Data provenance and limitations
 
-Every score and team is fabricated. The eight-game sample is intended for interface and pipeline demonstration, **not prediction or real-world sports conclusions**. It does not include uncertainty intervals, schedule adjustment, out-of-sample validation or proprietary handicapping logic. Ties do not count as wins. SQL/Python parity tests and hosted deployment are future enhancements.
+Every score and team is fabricated. The eight-game sample is intended for interface and pipeline demonstration, **not prediction or real-world sports conclusions**. It does not include uncertainty intervals, schedule adjustment, out-of-sample validation or proprietary handicapping logic. Ties do not count as wins. SQL/Python parity tests are future enhancements. The app is deployed to Streamlit Community Cloud.
 
 ## License
 
