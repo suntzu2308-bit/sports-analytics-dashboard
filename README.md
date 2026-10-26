@@ -4,6 +4,18 @@
 
 An interactive **Streamlit + Python** portfolio dashboard using **fabricated match results**. Explore team performance through KPI cards, team and date filters, win-percentage and scoring charts, a date-filtered game log, and CSV export. Includes a reproducible standard-library KPI pipeline, SQLite query example, and automated tests.
 
+## Dashboard screenshots
+
+The screenshots below show the interactive dashboard using synthetic sports data, including performance KPIs, comparisons, and game-level views.
+
+![Sports Analytics dashboard screenshot 1](Screenshot_20261026_060348_Chrome.jpg)
+
+![Sports Analytics dashboard screenshot 2](Screenshot_20261026_060404_Chrome.jpg)
+
+![Sports Analytics dashboard screenshot 3](Screenshot_20261026_060418_Chrome.jpg)
+
+![Sports Analytics dashboard screenshot 4](Screenshot_20261026_060434_Chrome.jpg)
+
 ## Business question
 How can an analyst compare team performance consistently across a selected date window without exposing a proprietary forecasting model?
 
