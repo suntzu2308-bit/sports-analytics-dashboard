@@ -1,34 +1,47 @@
 # Sports Analytics Dashboard
 
-A reproducible **Python + SQLite sports analytics portfolio demonstration** using fabricated match results. This project showcases data quality checks, team KPI aggregation, SQL reporting, and generation of a static SVG chart. It is **not yet an interactive dashboard**.
+An interactive **Streamlit + Python** portfolio dashboard using **fabricated match results**. Explore team performance through KPI cards, team and date filters, win-percentage and scoring charts, a date-filtered game log, and CSV export. Includes a reproducible standard-library KPI pipeline, SQLite query example, and automated tests.
 
-## Run locally
-Requirements: Python 3.10+; standard library only.
+## Run the interactive dashboard locally
+
+Requires Python 3.10+:
+
+```bash
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
+
+Streamlit will display a local URL (usually http://localhost:8501).
+
+## Run the reproducible pipeline and tests
 
 ```bash
 python src/analyze.py
 python -m unittest discover -s tests -v
 ```
 
-Run commands from the repository root. The analysis writes `output/team_kpis.csv` and `output/kpi_chart.svg` (the output directory is created automatically).
+The pipeline writes `output/team_kpis.csv` and `output/kpi_chart.svg`. GitHub Actions runs the unit tests, pipeline and dashboard syntax check on pushes and pull requests.
 
-## Key performance indicators
-- Games and wins per team
-- Win percentage
-- Average points scored and allowed
-- Aggregate point differential
+## What the dashboard measures
+- Games, wins, win percentage, average points scored and allowed, aggregate point differential
+- Date-window filters and team comparison
+- Downloadable filtered KPI table
 
-The same calculations are expressed in `sql/kpis.sql` for a SQLite table named `games`. Import `data/games.csv` into that table to execute the SQL.
+**Filtering note:** date filtering determines which games enter the aggregates; team selection determines which teams are displayed. Games against unselected opponents still count in the selected teams' statistics.
 
-## Structure
-- `data/games.csv` — synthetic, invented team scores
-- `src/analyze.py` — CSV validation, KPI calculations and SVG export
-- `sql/kpis.sql` — SQL aggregation
-- `tests/test_analyze.py` — basic automated tests
-- `output/` — generated outputs (not committed)
+## Repository map
+- `app.py` — interactive Streamlit dashboard
+- `requirements.txt` — dashboard dependencies
+- `data/games.csv` — synthetic games
+- `src/analyze.py` — CSV validation, aggregation and SVG export
+- `sql/kpis.sql` — SQLite aggregation query
+- `tests/test_analyze.py` — automated KPI tests
+- `.github/workflows/tests.yml` — continuous integration
 
-## Data quality and limitations
-The pipeline checks missing fields, duplicate IDs, dates, self-matchups and nonnegative integer scores. This small synthetic sample is **not evidence of real team performance**. It does not include schedule adjustment, uncertainty intervals, predictive validation or an interactive dashboard. Tied games do not count as wins. Future development: add a Streamlit dashboard, larger licensed datasets, CI, and SQL/Python parity tests.
+## Data provenance and limitations
+
+Every score and team is fabricated. The eight-game sample is intended for interface and pipeline demonstration, **not prediction or real-world sports conclusions**. It does not include uncertainty intervals, schedule adjustment, out-of-sample validation or proprietary handicapping logic. Ties do not count as wins. SQL/Python parity tests and hosted deployment are future enhancements.
 
 ## License
-MIT. No private data, API credentials, or proprietary sports models are included.
+
+MIT. No private data, API credentials or proprietary models are included.
